@@ -13,13 +13,13 @@ let package = Package(
     name: "MyPackage",
     // ...
     dependencies: [
-        .package(url: "https://github.com/juozasvalancius/SwiftLintPlugins.git", branch: "main"),
+        .package(url: "https://github.com/juozasvalancius/SwiftLintPlugins", branch: "main"),
         // ...
     ],
     targets: [
         .target(
             name: "MyPackage",
-            plugins: ["SwiftLint"]
+            plugins: [ .plugin(name: "SwiftLint", package: "SwiftLintPlugins") ]
         ),
         // ...
     ]
